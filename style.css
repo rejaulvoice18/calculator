@@ -1,0 +1,18 @@
+body{
+    padding:100px;
+}
+
+.calculator{
+    width:310px;
+    height:500px;
+    background-color: tomato;
+    padding:15px;
+}
+.mesmo{
+    width:68px;
+    height:68px;
+    font-size: 25px;
+    padding:10px 15px;
+    border: 1px solid white;
+    font-weight:700
+}

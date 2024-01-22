@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="calculator-area">
+        <div class="calculator">
+            <h2 class="text-center text-white text-uppercase">Calculator</h2>
+            <input type="text" class="form-control text-end fs-3" id="displayResult">
+            <br>
+            <table id="numbers_and_sign">
+                <tr>
+                    <td><button class="mesmo btn-4" onclick="deleteMe()">AC</button></td>
+                </tr>
+                <tr>
+                    <td><button class="mesmo btn-1" id="number-7" onclick="calculator('7')">7</button></td>
+                    <td><button class="mesmo btn-2" id="number-8" onclick="calculator('8')">8</button></td>
+                    <td><button class="mesmo btn-3" id="number-9" onclick="calculator('9')">9</button></td>
+                    <td><button class="mesmo btn-4" onclick="calculator('/')">/</button></td>
+                </tr>
+                <tr>
+                    <td><button class="mesmo btn-5" id="number-4" onclick="calculator('4')">4</button></td>
+                    <td><button class="mesmo btn-6" id="number-5" onclick="calculator('5')">5</button></td>
+                    <td><button class="mesmo btn-7" id="number-6" onclick="calculator('6')">6</button></td>
+                    <td><button class="mesmo btn-8" onclick="calculator('*')">x</button></td>
+                </tr>
+                <tr>
+                    <td><button class="mesmo btn-9" id="number-1" onclick="calculator('1')">1</button></td>
+                    <td><button class="mesmo btn-10" id="number-2" onclick="calculator('2')">2</button></td>
+                    <td><button class="mesmo btn-11" id="number-3" onclick="calculator('3')">3</button></td>
+                    <td><button class="mesmo btn-12" onclick="calculator('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="mesmo btn-13" id="number-0" onclick="calculator('0')">0</button></td>
+                    <td><button class="mesmo btn-14" onclick="calculator('.')">.</button></td>
+                    <td><button class="mesmo btn-15" id="equal_sign" onclick="equal()">=</button></td>
+                    <td><button class="mesmo btn-16" id="plus_sign" onclick="calculator('+')">+</button></td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+    <script>
+       function deleteMe(){
+            document.getElementById('displayResult').value = "";
+       } 
+       
+       function calculator(NewNumber){
+            let result = document.getElementById('displayResult').value += NewNumber;
+       }
+
+       function equal(){
+          let result = document.getElementById('displayResult').value;
+          let total = eval(result);
+          document.getElementById('displayResult').value = total;
+
+       }
+    </script>
+</body>
+
+</html>

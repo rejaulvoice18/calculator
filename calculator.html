@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="calculator-area">
+        <div class="calculator">
+            <h2 class="text-center text-white text-uppercase">Calculator</h2>
+            <input type="text" class="form-control text-end fs-3" id="inputDisplay">
+            <br>
+            <table id="numbers_and_sign">
+                <tr>
+                    <td><button class="mesmo btn-1" id="number-7"></button></td>
+                    <td><button class="mesmo btn-2" id="number-8"></button></td>
+                    <td><button class="mesmo btn-3" id="number-9">B</button></td>
+                    <td><button class="mesmo btn-4">C</button></td>
+                </tr>
+                <tr>
+                    <td><button class="mesmo btn-1" id="number-7">7</button></td>
+                    <td><button class="mesmo btn-2" id="number-8">8</button></td>
+                    <td><button class="mesmo btn-3" id="number-9">9</button></td>
+                    <td><button class="mesmo btn-4">/</button></td>
+                </tr>
+                <tr>
+                    <td><button class="mesmo btn-5" id="number-4">4</button></td>
+                    <td><button class="mesmo btn-6" id="number-5">5</button></td>
+                    <td><button class="mesmo btn-7" id="number-6">6</button></td>
+                    <td><button class="mesmo btn-8">*</button></td>
+                </tr>
+                <tr>
+                    <td><button class="mesmo btn-9" id="number-1">1</button></td>
+                    <td><button class="mesmo btn-10" id="number-2">2</button></td>
+                    <td><button class="mesmo btn-11" id="number-3">3</button></td>
+                    <td><button class="mesmo btn-12">-</button></td>
+                </tr>
+                <tr>
+                    <td><button class="mesmo btn-13" id="number-0">0</button></td>
+                    <td><button class="mesmo btn-14">.</button></td>
+                    <td><button class="mesmo btn-15" id="equal_sign">=</button></td>
+                    <td><button class="mesmo btn-16" id="plus_sign">+</button></td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+    <script>
+        //Plus sign Event Handler
+
+
+        // document.getElementById('number-7').addEventListener('click', function(){
+        //     givenInputNumbers('7');
+        // })
+        // document.getElementById('number-8').addEventListener('click', function(){
+        //     givenInputNumbers('8');
+        // })
+        // document.getElementById('number-9').addEventListener('click', function(){
+        //     givenInputNumbers('9');
+        // })
+        // document.getElementById('number-4').addEventListener('click', function(){
+        //     givenInputNumbers('4');
+        // })
+        // document.getElementById('number-5').addEventListener('click', function(){
+        //     givenInputNumbers('5');
+        // })
+        // document.getElementById('number-6').addEventListener('click', function(){
+        //     givenInputNumbers('6');
+        // })
+        // document.getElementById('number-1').addEventListener('click', function(){
+        //     givenInputNumbers('1');
+        // })
+        // document.getElementById('number-2').addEventListener('click', function(){
+        //     givenInputNumbers('2');
+        // })
+        // document.getElementById('number-3').addEventListener('click', function(){
+        //     givenInputNumbers('3');
+        // })
+
+        //functions for all numbers
+
+        // function getClickInput(id){
+
+        // }
+
+        //     function givenInputNumbers(numbers){
+        //         const valueInput = document.getElementById('inputDisplay')
+        //         const valueInputInt = parseInt(valueInput.value);
+        //         valueInput.value = 0; 
+        //         if(numbers == '7'){
+        //             valueInput.value = 7;
+        //         }
+        //         if(numbers == '8'){
+        //             valueInput.value = 8;
+        //         }
+        //         if(numbers == '9'){
+        //             valueInput.value = 9;
+        //         }
+        //         if(numbers == '4'){
+        //             valueInput.value = 4;
+        //         }
+        //         if(numbers == '5'){
+        //             valueInput.value = 5;
+        //         }
+        //         if(numbers == '6'){
+        //             valueInput.value = 6;
+        //         }
+        //         if(numbers == '1'){
+        //             valueInput.value = 1;
+        //         }
+        //         if(numbers == '2'){
+        //             valueInput.value = 2;
+        //         }
+        //         if(numbers == '3'){
+        //             valueInput.value = 3;
+        //         }
+        //     }
+
+        document.getElementById('numbers_and_sign').addEventListener('click', function (event) {
+            const singleNumber = event.target.innerText;
+
+
+            // const valueInput = document.getElementById('inputDisplay').value;
+            // const valueInputInt = parseInt(valueInput.value);
+
+            if(singleNumber === 'B' || singleNumber === 'C' || singleNumber === '='){
+                if(singleNumber === 'B'){
+                    let inputValue = document.getElementById('inputDisplay').value;
+                    document.getElementById('inputDisplay').value = inputValue.substring(0, inputValue.length - 1);
+                }
+                if(singleNumber === 'C'){
+                    document.getElementById('inputDisplay').value = '';
+                }
+                if(singleNumber === '='){
+                    let total = document.getElementById('inputDisplay').value;
+                    const totalValue = eval(total);
+                    document.getElementById('inputDisplay').value = totalValue;
+                }
+            }
+            else{
+                document.getElementById('inputDisplay').value += singleNumber;
+                console.log(result);
+            }
+            
+
+            // for (i = 1; i < singleNumber.innerText.length; i++) {
+            //         let sum = 0;
+            //         let element = singleNumber.innerText[i];
+            //         sum = element;
+                    
+            //         valueInput.value = sum;
+
+            //     }
+            //     console.log(valueInput.value);
+            // document.document.getElementById('equal_sign').addEventListener('click', function() {
+                
+
+            // })
+
+        })
+    </script>
+</body>
+
+</html>
